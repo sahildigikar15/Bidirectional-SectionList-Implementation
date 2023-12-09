@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "BidirectionalSectionList",
+    "name": "MovieFix",
     "slug": "BidirectionalSectionList",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,22 +9,24 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "package": "com.sahildigikar.BidirectionalSectionList"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f58ba125-93f4-45ea-9cc1-75d225ba456a"
+      }
     }
   }
 }

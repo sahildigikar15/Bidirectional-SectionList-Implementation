@@ -15,7 +15,6 @@ const MovieDetails= ({route}) => {
     const fetchData = async () => {
         try {
             setLoading(true);
-            console.log(GETMOVIEDETAILS + `${movieId}?api_key=${API_KEY}`);
             let movieInfo = await fetch(GETMOVIEDETAILS + `${movieId}?api_key=${API_KEY}`);
             let movieData = await movieInfo.json();
             setMovieDetails(movieData);

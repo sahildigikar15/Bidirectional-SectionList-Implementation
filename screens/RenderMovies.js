@@ -88,7 +88,7 @@ export default function RenderMovies() {
         });
       }
     } catch (e) {
-      console.log("Error ....." + e);
+      console.log(e);
     } finally {
       setLoading(false);
     }
@@ -121,7 +121,6 @@ export default function RenderMovies() {
   };
 
   const handleGenrePress = (genresList) => {
-    console.log(genresList + "FIRST CALL");
     selectedGenresChanged.current = true;
     setCurrYear(2012); 
     setMovieData([]);
