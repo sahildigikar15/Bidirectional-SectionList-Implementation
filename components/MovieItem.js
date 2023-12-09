@@ -1,7 +1,7 @@
-// MovieItem.js
 import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { GETMOVIEIMAGE } from '../utils/constants';
 
 const { width, height } = Dimensions.get('window');
 
@@ -38,7 +38,7 @@ const MovieItem = ({ item, index, section}) => {
             <View style={[styles.card, { width: width / 2 - 25 }]}>
               <Image
                 source={{
-                  uri: `https://image.tmdb.org/t/p/w500/${nextItem.poster_path}`,
+                  uri: `${GETMOVIEIMAGE}${nextItem.poster_path}`,
                 }}
                 style={styles.image}
               />
@@ -58,15 +58,6 @@ const MovieItem = ({ item, index, section}) => {
   }
 
 const styles = StyleSheet.create({
-  // card: {
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   color: 'white',
-  //   padding: 16,
-  //   backgroundColor: '#747474',
-  //   margin: 5,
-  //   height: 300
-  // },
   card: {
     justifyContent: 'center',
     alignItems: 'center'

@@ -1,4 +1,4 @@
-import {View, ActivityIndicator, Text, Modal, StyleSheet} from 'react-native'
+import {View, ActivityIndicator, Modal, StyleSheet} from 'react-native'
 
 const Spinner = ({loading}) => {
     return (
@@ -8,7 +8,6 @@ const Spinner = ({loading}) => {
           animationType="none"
           visible={loading}
           onRequestClose={() => {
-            // Handle modal close if needed
           }}>
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
@@ -22,16 +21,11 @@ const Spinner = ({loading}) => {
 
 
 const styles = StyleSheet.create({
-    // container: {
-    //   flex: 1,
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    // },
     modalContainer: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-    //   backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
+    //   backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     modalContent: {
       backgroundColor: '#fff',

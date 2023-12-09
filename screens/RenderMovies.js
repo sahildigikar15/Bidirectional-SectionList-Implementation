@@ -1,18 +1,8 @@
-// App.js
 import React, { useEffect, useState, useRef } from "react";
 import {
-  SafeAreaView,
   StyleSheet,
-  StatusBar,
-  Dimensions,
-  FlatList,
   View,
-  Text,
-  Button,
-  TouchableOpacity,
-  ScrollView,
   ActivityIndicator,
-  RefreshControl
 } from "react-native";
 import MovieList from "../components/MovieList";
 import GenreList from "../components/GenreList";
@@ -37,13 +27,9 @@ export default function RenderMovies() {
 
   useEffect(() => {
     setMovieData([]);
-    console.log("aFTER SETMOVIE" + moviedata[0]?.data.length);
     setCurrYear(2012);
-    console.log("aFTER SETYEAR" + currYear);
     prevYearRef.current = 2012;
     nextYearRef.current = 2012;
-    // sectionListRef.current = null
-    console.log("aFTER REFS" + prevYearRef.current);
     selectedGenresChanged.current = true;
     fetchData();
 
@@ -53,26 +39,16 @@ export default function RenderMovies() {
     try {
       setLoading(true);
       const genreIds = selectedGenres.filter((id) => id !== 0).join(",");
-      console.log(
-        GETALLMOVIES +
-          `${currYear}&api_key=${API_KEY}` +
-          `${genreIds ? "&with_genres=" + genreIds : ""}`
-      );
-      console.log("Current Year " + currYear);
-      console.log("INSIDE FETCH");
       const lists = await fetch(
         GETALLMOVIES +
           `${currYear}&api_key=${API_KEY}` +
           `${genreIds ? "&with_genres=" + genreIds : ""}`
       );
       const newdata = await lists.json();
-      console.log("NewData " + newdata);
       const modifiedData = {
         title: currYear,
         data: newdata?.results?.slice(0, 20),
       };
-      // console.log(modifiedData?.data[0].genre_ids);
-      // console.log("Length---" + moviedata)
       if(modifiedData?.data.length != 0) {
         if (currYear >= 2012) {
           setMovieData([...moviedata, modifiedData]);
@@ -95,7 +71,6 @@ export default function RenderMovies() {
         sectionListRef.current.scrollToLocation({
           animated: false,
           itemIndex: lastIndex,
-          // sectionIndex: lastIndex,
           viewOffset: 0,
         });
       }
@@ -104,13 +79,11 @@ export default function RenderMovies() {
         selectedGenresChanged.current &&
         sectionListRef.current && currYear == 2012
       ) {
-        // const firstIndex = modifiedData?.data?.length;
         selectedGenresChanged.current = false;
         sectionListRef.current.scrollToLocation({
           animated: false,
           itemIndex: 1,
           sectionIndex: 0,
-          // viewPosition: 1,
           viewOffset: 0,
         });
       }
@@ -129,12 +102,10 @@ export default function RenderMovies() {
   };
 
   const onScroll = (event) => {
-    console.log("*********In Scroll");
     let currentOffset = event?.nativeEvent?.contentOffset?.y;
     let direction =
       currentOffset > 0 && currentOffset > offset.current ? "down" : "up";
     if (direction === "up" && currentOffset == 0 && !loading) {
-      console.log("Inside !!");
       handleStartReached();
     }
     offset.current = currentOffset;
@@ -152,28 +123,15 @@ export default function RenderMovies() {
   const handleGenrePress = (genresList) => {
     console.log(genresList + "FIRST CALL");
     selectedGenresChanged.current = true;
-    setCurrYear(2012); // Reset to default year
-    setMovieData([]); // Clear existing movie data
+    setCurrYear(2012); 
+    setMovieData([]);
     setSelectedGenres(genresList);
   };
-
-  // const onContentSizeChange = (contentWidth, contentHeight) => {
-  //   const listHeight = sectionListRef.current?.props?.height || 0;
-  //   const isScrollable = contentHeight > listHeight;
-
-  //   // if (!isScrollable) {
-  //     console.log('No scrollable content. Triggering your function...');
-  //     // Call your function for no scrollable content
-  //   // }
-  // };
-
   const renderLoading = () => {
     return loading && (nextYearRef.current != 2012 || prevYearRef.current != 2012) ? (
       <ActivityIndicator size="large" color="#0000ff" />
     ) : null;
   }
-
-  // const renderHeader = () => 
 
   return (
     <>

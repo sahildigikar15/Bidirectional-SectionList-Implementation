@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {View, Text, StyleSheet, FlatList, Image, Dimensions, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet, FlatList, Image, TouchableOpacity} from 'react-native'
 import { GETMOVIEDETAILS } from '../utils/constants';
 import { useNavigation } from '@react-navigation/native';
 import { API_KEY } from 'react-native-dotenv'
@@ -50,17 +50,13 @@ const styles = StyleSheet.create({
     movieImage: {
         width: 100,
         height: 150,
-        // borderRadius: 50,
         resizeMode: "contain",
-        // borderWidth: 1,
-        // borderColor: "red",
         margin: 5
     },
     moviesTitle: {
         color: "white",
         fontWeight: "bold",
         fontSize: 20,
-        // margin: 10
     },
     title: {
         color: "white",

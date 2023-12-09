@@ -74,19 +74,3 @@ const styles = StyleSheet.create({
 })
 
 export default MovieCast;
-
-
-// {
-//     "adult": false,
-//     "gender": 1,
-//     "id": 1172108,
-//     "known_for_department": "Acting",
-//     "name": "Mckenna Grace",
-//     "original_name": "Mckenna Grace",
-//     "popularity": 49.149,
-//     "profile_path": "/e8pnblWxirhG54tlNTQyXNjXQd4.jpg",
-//     "cast_id": 21,
-//     "character": "Skye (voice)",
-//     "credit_id": "63d17ddea410c81215b6259c",
-//     "order": 0
-//   },

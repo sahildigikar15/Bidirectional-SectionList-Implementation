@@ -1,6 +1,4 @@
-// MovieList.js
-import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, SectionList, Image, Dimensions, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import { GETMOVIEDETAILS } from '../utils/constants';
 import MovieInfo from '../components/MovieInfo';
 import { API_KEY } from 'react-native-dotenv'
@@ -20,7 +18,6 @@ const MovieDetails= ({route}) => {
             console.log(GETMOVIEDETAILS + `${movieId}?api_key=${API_KEY}`);
             let movieInfo = await fetch(GETMOVIEDETAILS + `${movieId}?api_key=${API_KEY}`);
             let movieData = await movieInfo.json();
-            // console.log("Movie details " + movieInfo.title)
             setMovieDetails(movieData);
         } catch(e) {
             console.log(e)
@@ -28,10 +25,10 @@ const MovieDetails= ({route}) => {
             setLoading(false);
         }
     }
-    return (  
-        <>
-        <MovieInfo movieDetails={movieDetails} movieId={movieId}/>
-        </>
+    return (
+      <>
+        <MovieInfo movieDetails={movieDetails} movieId={movieId} />
+      </>
     );
 };
 

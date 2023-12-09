@@ -1,6 +1,5 @@
-// MovieList.js
-import React, { useRef } from 'react';
-import { View, Text, SectionList, ActivityIndicator } from 'react-native';
+import React from 'react';
+import { View, Text, SectionList } from 'react-native';
 import MovieItem from './MovieItem';
 
 const MovieList = ({ moviedata, onScroll, handleEndReached, sectionListRef }) => {
