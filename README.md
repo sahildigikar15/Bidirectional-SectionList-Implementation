@@ -22,7 +22,7 @@ These are instructions to get things working locally.
   - git clone https://github.com/sahildigikar15/Bidirectional-SectionList-Implementation.git
   - cd Bidirectional-SectionList-Implementation
   - npm install
-  - Add the TMDb license in .env file
+  - Add the TMDb license in .env file (eg. API_KEY=123456789)
   - npm start
   - Open Expo App and scan the QR mentioned in console. 
     OR 
