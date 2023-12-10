@@ -50,7 +50,7 @@ These are instructions to get things working locally.
 
 Video: http://bit.ly/41iQZGo
 
-APK: https://bit.ly/41hl9tR
+APK: https://bit.ly/46MqD0Q
 
 
 
