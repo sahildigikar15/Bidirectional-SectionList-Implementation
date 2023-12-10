@@ -59,7 +59,7 @@ export default function RenderMovies() {
         if (nextYearRef.current < 2023) {
           nextYearRef.current += 1;
           setCurrYear(nextYearRef.current);
-        } else if(nextYearRef.current >= 2023 && modifiedData?.data.length == 0 && prevYearRef.current >= 1900) {
+        } else if(nextYearRef.current >= 2023 && modifiedData?.data.length == 0 && prevYearRef.current >= 1950) {
           prevYearRef.current -=1;
           setCurrYear(prevYearRef.current);
         } 
