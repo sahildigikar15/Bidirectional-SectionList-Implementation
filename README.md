@@ -27,6 +27,9 @@ These are instructions to get things working locally.
   - Open Expo App and scan the QR mentioned in console. 
     OR 
     Run emulator in Android Studio and press "a" in console to open app in AVD.
+
+  - To build APK 
+    eas build -p android
 ```
 
 ## Features
